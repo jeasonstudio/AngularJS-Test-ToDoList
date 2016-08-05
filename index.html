@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <title>MyAngulartest</title>
+    <link href="css\bootstrap.min.css" rel="stylesheet">
+    <link href="main.css" rel="stylesheet">
+    <script src="http://cdn.bootcss.com/angular.js/1.3.9/angular.min.js"></script>
+</head>
+
+<body ng-app="myApp" ng-controller="todoCtrl">
+<div>
+    <h2>To Do List</h2>
+</div>
+
+
+
+<div class="row">
+    <div class="col-lg-6">
+        <div class="input-group">
+            <input type="text" ng-model="todoInput" class="form-control" placeholder="What Do You Want To Do...">
+            <span class="input-group-btn">
+                    <button class="btn btn-default" type="submit" ng-click="todoAdd()">Add in List</button>
+                </span>
+        </div>
+        <!-- /input-group -->
+    </div>
+    <!-- /.col-lg-6 -->
+</div>
+<!-- /.row -->
+<br>
+
+<div ng-repeat="x in todoList">
+    <ul class="list-group">
+        <li class="list-group-item">
+            <input type="checkbox" ng-model="x.done"> <span ng-bind="x.todoText"></span>
+        </li>
+    </ul>
+</div>
+
+<p>
+    <button class="btn btn-default" ng-click="remove()" class>DONE</button>
+</p>
+
+<script src="app.js"></script>
+</body>
+
+</html>
